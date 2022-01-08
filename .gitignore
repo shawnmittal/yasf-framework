@@ -1,11 +1,11 @@
-.py[cod]
+*.py[cod]
 
 # C extensions
-.so
+*.so
 
 # Packages
-.egg
-.egg-info
+*.egg
+*.egg-info
 dist
 build
 eggs
@@ -22,13 +22,13 @@ __pycache__
 # Installer logs
 pip-log.txt
 
-# Unit test  coverage reports
+# Unit test / coverage reports
 .coverage
 .tox
 nosetests.xml
 
 # Translations
-.mo
+*.mo
 
 # Mr Developer
 .mr.developer.cfg
@@ -37,5 +37,5 @@ nosetests.xml
 
 venv
 app.db
-*.log
+sentimentally.log*
 .env
