@@ -1,1 +1,1 @@
-FLASK_APP=sentimentally.py
+FLASK_APP=yasf-app.py
