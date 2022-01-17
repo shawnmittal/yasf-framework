@@ -40,11 +40,14 @@ def create_app(config_class=Config):
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
 
-    from app.main import bp as main_bp
-    app.register_blueprint(main_bp)
+    from app.landing import bp as landing_bp
+    app.register_blueprint(landing_bp)
 
-    from app.charts import bp as charts_bp
-    app.register_blueprint(charts_bp)
+    from app.saas import bp as charts_bp
+    app.register_blueprint(charts_bp, url_prefix='/app')
+
+    from app.payment import bp as payment_bp
+    app.register_blueprint(payment_bp)
     
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
@@ -65,7 +68,7 @@ def create_app(config_class=Config):
 
         if not os.path.exists('logs'):
             os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/yasf.log',
+        file_handler = RotatingFileHandler('logs/yasf-app.log',
                                            maxBytes=10240, backupCount=10)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s %(levelname)s: %(message)s '
@@ -74,7 +77,7 @@ def create_app(config_class=Config):
         app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('yasf startup')
+        app.logger.info('YASF App')
 
     return app
 

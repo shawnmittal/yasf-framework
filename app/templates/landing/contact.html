@@ -6,8 +6,7 @@
             <div class="ud-contact-title">
               <span>CONTACT US</span>
               <h2>
-                Let’s talk about <br />
-                Love to hear from you!
+                We'd love to hear from you!
               </h2>
             </div>
             <div class="ud-contact-info-wrapper">
@@ -39,43 +38,30 @@
             data-wow-delay=".2s"
           >
             <h3 class="ud-contact-form-title">Send us a Message</h3>
-            <form class="ud-contact-form">
+            <form class="ud-contact-form" action="" method="post" novalidate>
+              {{ form.hidden_tag() }}
               <div class="ud-form-group">
-                <label for="fullName">Full Name*</label>
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Adam Gelius"
-                />
+                {{ form.name.label }}
+                {{ form.name }}
               </div>
               <div class="ud-form-group">
-                <label for="email">Email*</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="example@yourmail.com"
-                />
+                {{ form.email.label }}
+                {{ form.email }}
               </div>
-              <div class="ud-form-group">
+<!--               <div class="ud-form-group">
                 <label for="phone">Phone*</label>
                 <input
                   type="text"
                   name="phone"
                   placeholder="+885 1254 5211 552"
                 />
-              </div>
+              </div> -->
               <div class="ud-form-group">
-                <label for="message">Message*</label>
-                <textarea
-                  name="message"
-                  rows="1"
-                  placeholder="type your message here"
-                ></textarea>
+                {{  form.message.label }}
+                {{ form.message }}
               </div>
               <div class="ud-form-group mb-0">
-                <button type="submit" class="ud-main-btn">
-                  Send Message
-                </button>
+                {{ form.submit(class='ud-main-btn') }}
               </div>
             </form>
           </div>

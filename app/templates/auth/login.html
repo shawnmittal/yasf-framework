@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'landing/base.html' %}
 
 {% block app_content %}
     <!-- ====== Banner Start ====== -->
@@ -41,7 +41,7 @@
                   </div>
                 </form>
   
-                <div class="ud-socials-connect">
+<!--                 <div class="ud-socials-connect">
                   <p>Connect With</p>
   
                   <ul>
@@ -61,9 +61,9 @@
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> -->
   
-                <a class="forget-pass" href="javascript:void(0)">
+                <a class="forget-pass" href="{{ url_for('auth.reset_password_request') }}">
                   Forget Password?
                 </a>
                 <p class="signup-option">
