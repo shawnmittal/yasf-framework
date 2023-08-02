@@ -1,4 +1,4 @@
-# YASF App
+# Yet Another SaaS Framework (YASF)
 Flask application with landing page, user auth, email, and payment for a SaaS application.
 
 ## To Do
